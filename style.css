@@ -75,6 +75,7 @@ img {
   opacity: 1.0;
   z-index: +200;
   transition: opacity 15s;
+  font-size: 5vmin;
 }
 
 #launchButton {
