@@ -74,12 +74,13 @@ img {
   background-color: #000;
   opacity: 1.0;
   z-index: +200;
-  transition: opacity 15s;
-  font-size: 5vmin;
+  transition: opacity 10s;
+  font-size: 4vmin;
 }
 
 #launchButton {
   cursor: pointer;
+  transition-duration: 0.2s;
 }
 
 #launchButton:hover {

@@ -1,6 +1,6 @@
 var jumpTimer;
 
-let videoIDs = ["QwZT7T-TXT0", "0tpjSq9uWsI", "zI2I319ilsY", "vwLiy4ti9is", "OlUdfLBiCJ4","Su6FeI7lHVg", "ardRp2x0D_E", "2ZBsRZ6QikI", "9axGb1rXIt8", "1aIYkgTcHBw", "VYm-n4BEJNI", "GDreFpd5IV4", "OX-g_MZdW9c", "pOMuZjlFTLc", "WAOkXN7aXxg", "zluEUZmECBs", "91SzTz9cYTQ","Bm6MKHO0_CI"];
+let videoIDs = ["QwZT7T-TXT0", "0tpjSq9uWsI", "zI2I319ilsY", "vwLiy4ti9is", "OlUdfLBiCJ4","Su6FeI7lHVg", "ardRp2x0D_E", "U2XhdPOzUvI", "cLdxuaxaQwc", "1aIYkgTcHBw", "VYm-n4BEJNI", "GDreFpd5IV4", "OX-g_MZdW9c", "pOMuZjlFTLc", "WAOkXN7aXxg", "zluEUZmECBs", "91SzTz9cYTQ","Bm6MKHO0_CI"];
 let playerObjects = [];
 var launchContainerElement;
 var launchButtonElement;
@@ -22,8 +22,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     console.log("CLICKED!");
 
     window.setTimeout(function() {
-      jumpTimer = setInterval(volumeSweep, 1500)
-    }, 1500);
+      jumpTimer = setInterval(volumeSweep, 1200)
+    }, 15000);
 
     // 2. This code loads the IFrame Player API code asynchronously.
     // tag.src = "https://www.youtube.com/iframe_api";
@@ -83,13 +83,14 @@ function volumeSweep() {
           console.log("UNMUTING #" + i);
           playerObjects[i].setPlaybackRate(Math.random()*2.0); // Playback rate randomization
           playerObjects[i].unMute(); // Mute Toggling
-          // document.getElementById("video_" + i).style.visibility = "visible"; // Visibility toggling
+          document.getElementById("video_" + i).style.visibility = "hidden"; // Visibility toggling
+
         }
       } else {
         if (!playerObjects[i].isMuted()) {
           console.log("Muting #" + i);
           playerObjects[i].mute(); // Mute Toggling
-          // document.getElementById("video_" + i).style.visibility = "hidden"; // Visibility toggling
+          document.getElementById("video_" + i).style.visibility = "visible"; // Visibility toggling
         }
       }
     } else {
